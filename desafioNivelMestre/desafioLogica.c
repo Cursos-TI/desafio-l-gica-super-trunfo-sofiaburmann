@@ -2,7 +2,7 @@
 
 int main(){
     // Variáveis
-    char pais1[30], pais2[30], nomeAtributo1[30], nomeAtributo2[30];
+    char pais1[30], pais2[30];
     int pontoTuristico1, pontoTuristico2, populacao1, populacao2, atributo1, atributo2, resultado1, resultado2, soma1, soma2;
     float area1, area2, pib1, pib2, densidade1, densidade2;
 
@@ -10,7 +10,7 @@ int main(){
     printf("\nCarta 1 \n");
 
     printf("Digite o nome do país: \n");
-    scanf("%s", &pais1); 
+    scanf("%s", pais1); 
 
     printf("Digite o número de habitantes: \n");
     scanf("%d", &populacao1);
@@ -41,7 +41,7 @@ int main(){
     printf("\nCarta 2 \n");
 
     printf("Digite o nome do país: \n");
-    scanf("%s", &pais2);
+    scanf("%s", pais2);
 
     printf("Digite o número de habitantes: \n");
     scanf("%d", &populacao2);
@@ -85,35 +85,30 @@ int main(){
     case 1:
         printf("Você escolheu o atributo População!\n");
         resultado1 = populacao1 > populacao2 ? 1 : 0;
-        nomeAtributo1[30] = "População";
         soma1 = populacao1;
         soma2 = populacao2;
         break;
     case 2:
         printf("Você escolheu o atributo Área!\n");
         resultado1 = area1 > area2 ? 1 : 0;
-        nomeAtributo1[30] = "Área";
         soma1 = area1;
         soma2 = area2;
         break;
     case 3:
         printf("Você escolheu o atributo PIB!\n");
         resultado1 = pib1 > pib2 ? 1 : 0;
-        nomeAtributo1[30] = "PIB";
         soma1 = pib1;
         soma2 = pib2;
         break;
     case 4:
         printf("Você escolheu o atributo Pontos Turísticos!\n");
         resultado1 = pontoTuristico1 > pontoTuristico2 ? 1 : 0;
-        nomeAtributo1[30] = "Pontos Turísticos";
         soma1 = pontoTuristico1;
         soma2 = pontoTuristico2;
         break;
     case 5:
         printf("Você escolheu o atributo Densidade Demográfica!\n");
         resultado1 = densidade1 < densidade2 ? 1 : 0;
-        nomeAtributo1[30] = "Densidade Demográfica";
         soma1 = densidade1;
         soma2 = densidade2;
         break;
@@ -145,35 +140,30 @@ int main(){
         case 1:
             printf("Você escolheu o atributo População!\n");
             resultado2 = populacao1 > populacao2 ? 1 : 0;
-            nomeAtributo2[30] = "População";
             soma1 = soma1 + populacao1;
             soma2 = soma2 + populacao2;
             break;
         case 2:
             printf("Você escolheu o atributo Área!\n");
             resultado2 = area1 > area2 ? 1 : 0;
-            nomeAtributo2[30] = "Área";
             soma1 = soma1 + area1;
             soma2 = soma2 + area2;
             break;
         case 3:
             printf("Você escolheu o atributo PIB!\n");
             resultado2 = pib1 > pib2 ? 1 : 0;
-            nomeAtributo2[30] = "PIB";
             soma1 = soma1 + pib1;
             soma2 = soma2 + pib2;
             break;
         case 4:
             printf("Você escolheu o atributo Pontos Turísticos!\n");
             resultado2 = pontoTuristico1 > pontoTuristico2 ? 1 : 0;
-            nomeAtributo2[30] = "Pontos Turísticos";
             soma1 = soma1 + pontoTuristico1;
             soma2 = soma2 + pontoTuristico2;
             break;
         case 5:
             printf("Você escolheu o atributo Densidade Demográfica!\n");
             resultado2 = densidade1 < densidade2 ? 1 : 0;
-            nomeAtributo2[30] = "Densidade Demográfica";
             soma1 = soma1 + densidade1;
             soma2 = soma2 + densidade2;
             break;
@@ -188,12 +178,12 @@ int main(){
     // Exibição dos resultados da comparação
     printf("\n---RESULTADO DA COMPARAÇÃO---\n");
     printf("%s X %s \n", pais1, pais2);
-    printf("Atributos escolhidos: %s e %s \n", nomeAtributo1, nomeAtributo2);
+    printf("Atributos escolhidos: %d e %d \n", atributo1, atributo2);
     if (resultado1 && resultado2)
     {
         printf("Parabéns, a carta %s venceu!\n", pais1);
     } else if (resultado1 != resultado2){
-        printf("Empatou!\n");
+        printf("Houve um empate!\n");
     } else {
         printf("Parabéns, a carta %s venceu!\n", pais2);
     }
@@ -203,7 +193,7 @@ int main(){
     {
         printf("Parabéns, a carta %s venceu a rodada!\n", pais1);
     } else if (soma1 == soma2){
-        printf("Houve um empate!");
+        printf("Houve um empate!\n");
     } else {
         printf("Parabéns, a carta %s venceu a rodada!\n", pais2);
     }
