@@ -187,7 +187,8 @@ int main(){
     } else {
         printf("Parabéns, a carta %s venceu!\n", pais2);
     }
-
+ 
+    // Exibição dos resultados da soma
     printf("\n---RESULTADO DA SOMA DOS ATRIBUTOS---\n");
     if (soma1 > soma2)
     {
